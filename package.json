@@ -1,0 +1,25 @@
+{
+  "name": "website-offers-ts-apr-26",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "compress:images": "node compress-lossless.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TenSketch/website-offers-TS-APR-26.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/TenSketch/website-offers-TS-APR-26/issues"
+  },
+  "homepage": "https://github.com/TenSketch/website-offers-TS-APR-26#readme",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}

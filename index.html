@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TenSketch | Premium Website Systems</title>
+    <meta name="description" content="Cinematic, high-converting website systems for modern businesses.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Libraries -->
+    <script src="gsap.min.js"></script>
+    <script src="ScrollTrigger.min.js"></script>
+</head>
+
+<body style="overflow-x: hidden;">
+
+    <!-- Preloader -->
+    <div id="preloader"
+        style="position: fixed; inset: 0; background: var(--black); z-index: 9999; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <div class="logo" style="margin-bottom: 20px; opacity: 0; transform: translateY(20px); letter-spacing: 4px;">
+            TENSKETCH</div>
+        <div id="loader-bar"
+            style="width: 100px; height: 1px; background: rgba(214, 179, 106, 0.2); position: relative; overflow: hidden;">
+            <div id="loader-progress"
+                style="position: absolute; inset: 0; background: var(--gold); transform: translateX(-100%);"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo" style="font-size: 14px; font-weight: 500; letter-spacing: 2px;">LEAD ENGINE @
+                    &#8377;5,900</div>
+                <a href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20start%20my%20website%20today."
+                    class="btn-gold" style="padding: 10px 20px; font-size: 14px;">WhatsApp Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="container">
+        <div class="grid-12">
+            <div class="hero-content reveal">
+                <div
+                    style="font-size: 12px; letter-spacing: 2px; color: var(--gold); margin-bottom: 20px; text-transform: uppercase;">
+                    Tamil New Year Growth Offer</div>
+                <h1>Your Website = Your <span class="gold-highlight">Sales Engine.</span></h1>
+                <p>We build you a conversion-focused lead generation system, not just a website. Capture leads, qualify
+                    them, and close faster on WhatsApp.</p>
+                <div style="margin-top: 40px;">
+                    <a href="#lead-form" class="btn-gold">Start Now</a>
+                </div>
+            </div>
+            <div class="hero-image reveal">
+                <img src="images/hero_woman_phone_direct.png" alt="Professional Woman Checking Phone">
+                <p class="hero-copy-note">Business woman checking phone</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="container" style="text-align: center;">
+        <div class="reveal">
+            <h2>No website = lost customers</h2>
+            <p style="margin: 0 auto 60px;">Customers get confused and drop off when your digital store isn't built for
+                closing.</p>
+        </div>
+        <div class="problem-cards grid md:grid-cols-2">
+            <article class="card reveal">
+                <img src="images/problem1.png" alt="Confusing UI">
+                <h3>Confusing UI</h3>
+                <p>Bad website screenshot style</p>
+            </article>
+            <article class="card reveal">
+                <img src="images/problem2.png" alt="Slow Loading">
+                <h3>Slow loading</h3>
+                <p>Loading spinner visual</p>
+            </article>
+            <article class="card reveal">
+                <img src="images/problem3.png" alt="No Enquiry Path">
+                <h3>No enquiry path</h3>
+                <p>Empty screen experience</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Shift Section -->
+    <section class="shift-section container reveal">
+        <h2 class="shift-title">Stop settling for a website. Start building a <span
+                class="gold-highlight">System.</span></h2>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="container">
+        <div class="grid-12">
+            <div class="solution-image reveal" style="grid-column: span 6;">
+                <img src="images/solution.png" alt="Modern Premium UI System">
+            </div>
+            <div class="solution-content reveal"
+                style="grid-column: span 6; display: flex; flex-direction: column; justify-content: center;">
+                <div
+                    style="font-size: 12px; letter-spacing: 2px; color: var(--gold); margin-bottom: 20px; text-transform: uppercase;">
+                    The System</div>
+                <h2>We assemble a conversion-ready website system</h2>
+                <p>High-converting pages built around clear offers, trust signals and a direct WhatsApp lead path.</p>
+                <ul style="list-style: none; margin-top: 30px;">
+                    <li style="margin-bottom: 20px;"><span class="gold-highlight">/01</span> Structured Storytelling
+                    </li>
+                    <li style="margin-bottom: 20px;"><span class="gold-highlight">/02</span> High-Converting Forms</li>
+                    <li><span class="gold-highlight">/03</span> Instant WhatsApp Connection</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Flow -->
+    <section id="flow" class="panel">
+        <div class="container reveal">
+            <h2 class="section-title text-center">Flow that turns traffic into conversations</h2>
+            <div class="flow-track mt-12">
+                <div class="flow-step reveal">
+                    <span class="step-icon">Ad</span>
+                    <span style="font-size: 14px;">Ad</span>
+                </div>
+                <div class="flow-step reveal">
+                    <span class="step-icon">Web</span>
+                    <span style="font-size: 14px;">Cinematic Site</span>
+                </div>
+                <div class="flow-step reveal">
+                    <span class="step-icon">Form</span>
+                    <span style="font-size: 14px;">Lead Filter</span>
+                </div>
+                <div class="flow-step reveal">
+                    <span class="step-icon">WA</span>
+                    <span style="font-size: 14px;">WhatsApp Chat</span>
+                </div>
+                <div class="flow-progress"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section id="offer" class="container" style="text-align: center;">
+        <div class="card reveal"
+            style="max-width: 900px; margin: 0 auto; border: 1px solid var(--gold); background: radial-gradient(circle at center, #1a150a, #0a0a0a); padding: 80px 40px;">
+            <div
+                style="font-size: 12px; letter-spacing: 2px; color: var(--gold); margin-bottom: 20px; text-transform: uppercase;">
+                Tamil New Year Special</div>
+            <h2 class="gold-highlight">Launch your Lead Generation System at just &#8377;5,900</h2>
+            <p style="margin-top: 10px; color: var(--white-muted);">Limited campaign slots. Offer closes in:</p>
+
+            <div class="countdown mt-6" id="countdown">
+                <div><span id="days">00</span><small>Days</small></div>
+                <div><span id="hours">00</span><small>Hours</small></div>
+                <div><span id="minutes">00</span><small>Min</small></div>
+                <div><span id="seconds">00</span><small>Sec</small></div>
+            </div>
+
+            <div class="offer-visual mt-10">
+                <img src="images/solution.png" alt="Happy Business Owner">
+                <p class="hero-copy-note" style="margin-top: 20px;">Happy business woman looking relieved</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="panel">
+        <div class="container">
+            <h2 class="section-title text-center">Choose your growth plan</h2>
+            <div class="grid md:grid-cols-3 gap-5 mt-10">
+                <article class="price-card reveal">
+                    <p style="font-size: 12px; color: var(--gold); margin-bottom: 10px;">STARTER</p>
+                    <h3>&#8377;5,900</h3>
+                    <p style="font-size: 14px;">Single-page high-converting landing page + WhatsApp integration.</p>
+                </article>
+                <article class="price-card highlight reveal">
+                    <p style="font-size: 12px; color: var(--gold); margin-bottom: 10px;">ACCELERATOR</p>
+                    <h3>&#8377;9,900</h3>
+                    <p style="font-size: 14px;">Multi-section site + lead form automation + funnel optimization.</p>
+                </article>
+                <article class="price-card reveal">
+                    <p style="font-size: 12px; color: var(--gold); margin-bottom: 10px;">GROWTH PARTNER</p>
+                    <h3 style="font-size: 24px;">&#8377;9,900/mo</h3>
+                    <p style="font-size: 14px;">Continuous landing page upgrades, ad funnel updates, and CRO support.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Form Section -->
+    <section id="lead-form" class="panel">
+        <div class="container">
+            <h2 class="section-title text-center">Get your website started now</h2>
+            <div class="lead-grid mt-12">
+                <div class="lead-visual reveal">
+                    <img src="images/hero.png" alt="Confident Owner">
+                    <p class="hero-copy-note" style="margin-top: 20px;">Confident business owner ready to scale</p>
+                </div>
+                <form id="leadCaptureForm" class="lead-form reveal">
+                    <label>
+                        Name
+                        <input type="text" name="name" placeholder="Your name" required />
+                    </label>
+                    <label>
+                        Phone
+                        <input type="tel" name="phone" placeholder="Your phone number" required />
+                    </label>
+                    <label>
+                        Business
+                        <input type="text" name="business" placeholder="Your business type" required />
+                    </label>
+                    <button type="submit" class="btn-primary w-full mt-6">Send to WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="final-cta" class="panel container" style="text-align: center;">
+        <div class="reveal" style="max-width: 800px; margin: 0 auto;">
+            <div
+                style="font-size: 12px; letter-spacing: 2px; color: var(--gold); margin-bottom: 20px; text-transform: uppercase;">
+                Ready to Scale?</div>
+            <h2>Start your website today</h2>
+            <p style="margin: 0 auto;">Let's build your lead generation system and activate your sales engine.</p>
+            <div style="margin-top: 40px;">
+                <a href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20book%20my%20slot%20for%20the%20website%20offer." class="btn-gold">Book my slot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 100px 0; border-top: 1px solid #222;">
+        <div class="container">
+            <div class="logo" style="margin-bottom: 20px; font-weight: 500; letter-spacing: 4px;">TENSKETCH</div>
+            <div style="font-size: 11px; opacity: 0.5; letter-spacing: 2px;">&copy; 2024 TENSKETCH. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
