@@ -5,7 +5,7 @@
   --gold-muted: rgba(214, 179, 106, 0.2);
   --white-muted: rgba(245, 245, 245, 0.6);
   --grid-gap: 32px;
-  --section-padding: 80px;
+  --section-padding: 60px;
   --max-width: 1100px;
 }
 
@@ -182,7 +182,7 @@ section {
 
 .shift-section {
   text-align: center;
-  padding: 100px 0;
+  padding: var(--section-padding) 0;
 }
 
 .shift-title {
@@ -192,17 +192,16 @@ section {
 
 /* Hero & Sections */
 .hero-content {
-  grid-column: span 12;
+  grid-column: span 6;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
-  align-items: center;
-  margin-bottom: 60px;
+  text-align: left;
+  align-items: flex-start;
 }
 
 .hero-image {
-  grid-column: span 12;
+  grid-column: span 6;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
@@ -238,48 +237,82 @@ header nav {
   filter: contrast(1.1) brightness(0.9);
 }
 
-/* Flow Section */
-.flow-track {
-  position: relative;
+/* Modern Flow UI */
+.flow-modern {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 60px 0;
+  gap: 20px;
+  margin-top: 80px;
+  position: relative;
 }
 
-.flow-step {
+.flow-node {
+  flex: 1;
+  text-align: center;
   position: relative;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  flex: 1;
 }
 
-.step-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+.node-bubble {
+  width: 80px;
+  height: 80px;
   border: 1px solid var(--gold);
+  border-radius: 50%;
+  margin: 0 auto 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--black);
   color: var(--gold);
+  font-size: 11px;
   font-weight: 500;
-  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px rgba(214, 179, 106, 0.1);
+  transition: all 0.4s ease;
 }
 
-.flow-progress {
+.flow-node:hover .node-bubble {
+  background: var(--gold);
+  color: var(--black);
+  box-shadow: 0 0 30px rgba(214, 179, 106, 0.3);
+  transform: translateY(-5px);
+}
+
+.node-title {
+  font-size: 18px;
+  color: var(--white);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.node-desc {
+  font-size: 13px;
+  color: var(--white-muted);
+  max-width: 180px;
+  margin: 0 auto;
+}
+
+.flow-connector {
   position: absolute;
-  top: 90px;
+  top: 40px;
   left: 10%;
   right: 10%;
   height: 1px;
-  background: var(--gold-muted);
+  background: linear-gradient(90deg, transparent, var(--gold-muted), transparent);
   z-index: 1;
 }
+
+@media (max-width: 900px) {
+  .flow-modern {
+    flex-direction: column;
+    gap: 60px;
+  }
+  .flow-connector {
+    display: none;
+  }
+}
+
 
 /* Countdown */
 .countdown {
@@ -403,7 +436,12 @@ header nav {
 @media (max-width: 900px) {
 
   .hero-content,
-  .hero-image,
+  .hero-image {
+    grid-column: span 12;
+    text-align: center;
+    align-items: center;
+  }
+
   .lead-grid,
   .md\:grid-cols-3,
   .md\:grid-cols-2 {
@@ -434,5 +472,109 @@ header nav {
 
   h1 {
     font-size: 32px;
+  }
+}
+
+/* Ultra-Minimalist Detailed Flow */
+.detailed-flow {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 80px;
+  position: relative;
+  margin-top: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 40px;
+}
+
+.flow-progress-rail {
+  display: none; /* Removing the rail for maximum neatness */
+}
+
+.flow-copy-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  padding-bottom: 200px;
+}
+
+.detail-step {
+  opacity: 0.15;
+  transition: all 0.5s ease;
+}
+
+.detail-step.is-active {
+  opacity: 1;
+}
+
+.detail-step span {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.detail-step h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--white);
+  font-weight: 400;
+}
+
+.detail-step p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--white-muted);
+}
+
+.flow-visual-stage {
+  position: sticky;
+  top: 30vh;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%; /* Circular small images for a neat look */
+  overflow: hidden;
+  background: #000;
+  border: 1px solid var(--gold-muted);
+}
+
+.flow-visual {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  margin: 0;
+}
+
+.flow-visual.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.flow-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.1);
+}
+
+@media (max-width: 768px) {
+  .detailed-flow {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .flow-visual-stage {
+    display: none;
+  }
+  .flow-copy-stack {
+    gap: 40px;
+    padding-bottom: 0;
+  }
+  .detail-step {
+    opacity: 1;
   }
 }

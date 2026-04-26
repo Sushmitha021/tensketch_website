@@ -6,6 +6,7 @@ function init() {
         gsap.set(".reveal", { opacity: 0, y: 30 });
         initReveals();
         initNavigation();
+        initDetailedFlow();
     } else {
         const preloader = document.getElementById("preloader");
         if (preloader) preloader.style.display = "none";
@@ -23,7 +24,7 @@ if (document.readyState === "loading") {
 }
 
 function initReveals() {
-    const reveals = gsap.utils.toArray(".reveal");
+    const reveals = gsap.utils.toArray(".reveal:not(.detail-step)");
     reveals.forEach((el) => {
         gsap.to(el, {
             y: 0,
@@ -154,3 +155,46 @@ function initNavigation() {
         }
     });
 }
+
+function initDetailedFlow() {
+    if (typeof gsap === 'undefined' || !document.querySelector(".detailed-flow")) return;
+
+    const steps = gsap.utils.toArray(".detail-step");
+    const visuals = gsap.utils.toArray(".flow-visual");
+    const line = document.getElementById("flow-line");
+    const dot = document.getElementById("flow-dot");
+
+    // Initial state
+    if (steps[0]) steps[0].classList.add("is-active");
+    if (visuals[0]) visuals[0].classList.add("is-active");
+
+    steps.forEach((step, i) => {
+        ScrollTrigger.create({
+            trigger: step,
+            start: "top 60%",
+            end: "bottom 60%",
+            onToggle: (self) => {
+                if (self.isActive) {
+                    steps.forEach(s => s.classList.remove("is-active"));
+                    visuals.forEach(v => v.classList.remove("is-active"));
+                    step.classList.add("is-active");
+                    if (visuals[i]) visuals[i].classList.add("is-active");
+                }
+            }
+        });
+    });
+
+    // Progress line mapping
+    ScrollTrigger.create({
+        trigger: ".detailed-flow",
+        start: "top 15vw",
+        end: "bottom 80%",
+        scrub: true,
+        onUpdate: (self) => {
+            const progress = self.progress * 100;
+            if (line) line.style.height = progress + "%";
+            if (dot) dot.style.top = progress + "%";
+        }
+    });
+}
+
